@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="producto"
+            type="com.moapdev.proverapp.model.Producto" />
+        <variable
+            name="clickListener"
+            type="com.moapdev.proverapp.home.HomeAdapter.ProductoListener" />
+        <variable
+            name="clickLongListener"
+            type="com.moapdev.proverapp.home.HomeAdapter.ProductoLongListener" />
+        <variable
+            name="imgListener"
+            type="com.moapdev.proverapp.home.HomeAdapter.ImageListener" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/minimo"
+        android:onLongClickListener="@{()->clickLongListener.onClick(producto)}"
+        android:onClick="@{()->clickListener.onClick(producto)}">
+        <!--android:onLongClick="@{()->clickLongListener.onClick(producto)}"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/imgProducto"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                android:onClick="@{()->imgListener.onClick(producto)}"
+                loadImage="@{producto.imgUrl}"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCantidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/minimo"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/imgProducto"
+                app:layout_constraintBottom_toBottomOf="@id/imgProducto"
+                tools:text="x54"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvNombre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/minimo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgProducto"
+                tools:text="Nombre del producto"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/minimo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvNombre"
+                tools:text="$12.00 u$d"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

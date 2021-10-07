@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "61394343983",
+    "project_id": "provapp-d796d",
+    "storage_bucket": "provapp-d796d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:61394343983:android:88461b10146011a3884eda",
+        "android_client_info": {
+          "package_name": "com.moapdev.proverapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "61394343983-7e2c8is638ig30ji7u4usu5555mph23t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzIW_WW8mw4HUJovfJe6JlKtcPQftTD0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "61394343983-7e2c8is638ig30ji7u4usu5555mph23t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
