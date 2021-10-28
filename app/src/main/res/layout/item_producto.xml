@@ -6,7 +6,7 @@
     <data>
         <variable
             name="producto"
-            type="com.moapdev.proverapp.model.Producto" />
+            type="com.moapdev.proverapp.entities.Producto" />
         <variable
             name="clickListener"
             type="com.moapdev.proverapp.home.HomeAdapter.ProductoListener" />

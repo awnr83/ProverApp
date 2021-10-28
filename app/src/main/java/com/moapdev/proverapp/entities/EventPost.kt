@@ -1,4 +1,4 @@
-package com.moapdev.proverapp
+package com.moapdev.proverapp.entities
 
 class EventPost() {
     var isSuccess: Boolean=false

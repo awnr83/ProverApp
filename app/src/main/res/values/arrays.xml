@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="estado_key">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </integer-array>
+
+    <string-array name="estado_valor">
+        <item>@string/fo_estado_pedido</item>
+        <item>@string/fo_estado_preparando</item>
+        <item>@string/fo_estado_enviado</item>
+        <item>@string/fo_estado_entregado</item>
+    </string-array>
+</resources>

@@ -21,6 +21,6 @@
         tools:layout="@layout/fragment_detalle" >
         <argument
             android:name="producto"
-            app:argType="com.moapdev.proverapp.model.Producto" />
+            app:argType="com.moapdev.proverapp.entities.Producto" />
     </fragment>
 </navigation>

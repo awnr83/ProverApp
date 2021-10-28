@@ -8,7 +8,6 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Button
@@ -18,14 +17,12 @@ import androidx.fragment.app.DialogFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.moapdev.proverapp.Constants
-import com.moapdev.proverapp.EventPost
-import com.moapdev.proverapp.InterfaceHA
+import com.moapdev.proverapp.entities.EventPost
+import com.moapdev.proverapp.home.InterfaceHA
 import com.moapdev.proverapp.databinding.FragmentDialogAddBinding
-import com.moapdev.proverapp.home.HomeFragment
-import com.moapdev.proverapp.model.Producto
+import com.moapdev.proverapp.entities.Producto
 
 class AddDialogFragment:DialogFragment(),DialogInterface.OnShowListener {
 
@@ -50,7 +47,6 @@ class AddDialogFragment:DialogFragment(),DialogInterface.OnShowListener {
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-
         activity?.let { activity->                 //la actividad es distinta de null
             mBinding= FragmentDialogAddBinding.inflate(LayoutInflater.from(context))
             mBinding?.let {                         //mBinding es distinto de null
@@ -140,10 +136,10 @@ class AddDialogFragment:DialogFragment(),DialogInterface.OnShowListener {
     }
 
     private fun uploadImage(productId: String?, callback: (EventPost)-> Unit){
-        val eventPost=EventPost()
+        val eventPost= EventPost()
 
         //si se recibe un productId!=null se asigna ese, sino se busca el id correcpondiente
-        eventPost.documentId= productId ?: FirebaseFirestore.getInstance().collection(Constants.COLL_PRODUCTS).document().id
+        eventPost.documentId= productId ?: FirebaseFirestore.getInstance().collection(Constants.FR_PRODUCTS).document().id
 
         val storageRef= FirebaseStorage.getInstance().reference.child(Constants.PATH_IMAGES)
 
@@ -175,7 +171,7 @@ class AddDialogFragment:DialogFragment(),DialogInterface.OnShowListener {
     }
     private fun save(producto: Producto, documentId: String){
         val db= FirebaseFirestore.getInstance()
-        db.collection(Constants.COLL_PRODUCTS)
+        db.collection(Constants.FR_PRODUCTS)
             .document(documentId)   //primero se pasa el id
             .set(producto)          //despues se guarda el producto
             //.add(producto)        //antes de guardar la imagen se guardaba directamente
@@ -186,7 +182,7 @@ class AddDialogFragment:DialogFragment(),DialogInterface.OnShowListener {
     private fun update(){
         val db= FirebaseFirestore.getInstance()
         mProductoSelected!!.id?.let { id->
-            db.collection(Constants.COLL_PRODUCTS)
+            db.collection(Constants.FR_PRODUCTS)
                 .document(id)
                 .set(mProductoSelected!!)
                 .addOnSuccessListener { Toast.makeText(context,"Producto actualizado", Toast.LENGTH_SHORT).show() }

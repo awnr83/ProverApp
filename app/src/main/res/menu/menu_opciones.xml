@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/mnuCerrar"
         android:title="Cerrar Sesion" />
+    <item
+        android:id="@+id/mnuHistorial"
+        android:icon="@drawable/ic_historial"
+        app:showAsAction="always"
+        android:title="Historial" />
+
 </menu>

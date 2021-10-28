@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.moapdev.proverapp.databinding.ItemProductoBinding
-import com.moapdev.proverapp.model.Producto
+import com.moapdev.proverapp.entities.Producto
 
 class HomeAdapter(val clickListener: ProductoListener, val clickLongListener: ProductoLongListener, val imgListener: ImageListener)
     :ListAdapter<Producto,HomeAdapter.Viewholder>(ProductoCallback()) {

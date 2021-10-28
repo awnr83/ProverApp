@@ -2,4 +2,18 @@
     <string name="app_name">ProverApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="fo_id">ID: %1$s</string>
+    <string name="fo_estado">Estado: %1$s</string>
+    <string name="fo_total">Total: $%1$.2f pesos</string>
+
+    <string name="fo_estado_pedido">Pedido</string>
+    <string name="fo_estado_preparando">Preparando</string>
+    <string name="fo_estado_enviado">Enviado</string>
+    <string name="fo_estado_entregado">Entregado</string>
+    <string name="fo_estado_desconocido">Desconocido</string>
+    <string name="ao_rastreo">Rastreo</string>
+    <string name="order_title">Orden</string>
+    <string name="ao_title">Historial de Compras</string>
+
 </resources>

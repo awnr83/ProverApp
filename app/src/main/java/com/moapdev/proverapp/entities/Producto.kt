@@ -1,4 +1,4 @@
-package com.moapdev.proverapp.model
+package com.moapdev.proverapp.entities
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -9,18 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.fragment.FragmentNavigatorDestinationBuilder
 import androidx.navigation.fragment.findNavController
-import com.google.firebase.firestore.DocumentChange
-import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
-import com.moapdev.proverapp.InterfaceHA
-import com.moapdev.proverapp.R
 import com.moapdev.proverapp.add.AddDialogFragment
 import com.moapdev.proverapp.databinding.FragmentHomeBinding
-import com.moapdev.proverapp.model.Producto
-import java.net.ProxySelector
+import com.moapdev.proverapp.entities.Producto
 
 class HomeFragment : Fragment(), InterfaceHA {
 
@@ -69,6 +62,7 @@ class HomeFragment : Fragment(), InterfaceHA {
             HomeAdapter.ProductoListener {
                 Log.i("alfredo","producto: ${it.name}")
                 mProductoSelected=it
+//                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToDetalleFragment(it))
                 AddDialogFragment().show(parentFragmentManager,AddDialogFragment::class.java.simpleName)
             },
             HomeAdapter.ProductoLongListener {

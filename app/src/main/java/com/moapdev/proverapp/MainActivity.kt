@@ -23,6 +23,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.moapdev.proverapp.databinding.ActivityMainBinding
+import com.moapdev.proverapp.orden.OrdenActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -98,6 +99,9 @@ class MainActivity : AppCompatActivity() {
                             mBinding.progresBar.visibility= View.VISIBLE
                         }
                     }
+            }
+            R.id.mnuHistorial->{
+                startActivity(Intent(this, OrdenActivity::class.java))
             }
         }
         return super.onOptionsItemSelected(item)

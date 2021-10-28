@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
-import com.moapdev.proverapp.model.Producto
+import com.moapdev.proverapp.entities.Producto
 
 class HomeViewModel: ViewModel() {
 
